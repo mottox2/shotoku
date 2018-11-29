@@ -8,7 +8,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
+          <p onClick={async () => {
+            if (window.pwd) {
+              const result = await window.pwd()
+              console.log(result)
+            }
+          }}>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
           <a
