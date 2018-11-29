@@ -12,5 +12,11 @@ const { execSync } = require('child_process');
     return result.toString()
   });
 
+  await app.exposeFunction('run', async (command) => {
+    const result = await execSync(command)
+    console.log(result.toString())
+    return result.toString()
+  });
+
   await app.load('index.html');
 })();
